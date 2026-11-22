@@ -49,6 +49,30 @@ export default function DashboardLayout({
             </form>
           </div>
         </div>
+
+        {/* Sub-Navigation Bar */}
+        <div className="border-t border-zinc-800/60 bg-zinc-950/40">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-6 h-11 text-xs font-medium">
+            <Link
+              href="/dashboard"
+              className="text-zinc-300 hover:text-amber-400 transition-colors py-2"
+            >
+              Command Center
+            </Link>
+            <Link
+              href="/dashboard/accounts"
+              className="text-zinc-300 hover:text-amber-400 transition-colors py-2"
+            >
+              Accounts & Liquidity
+            </Link>
+            <Link
+              href="/dashboard/commitments"
+              className="text-zinc-300 hover:text-amber-400 transition-colors py-2"
+            >
+              Fixed Commitments
+            </Link>
+          </div>
+        </div>
       </header>
 
       {/* Main Content Area */}

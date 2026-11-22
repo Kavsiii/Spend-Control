@@ -29,11 +29,11 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 2: Accounts & Fixed Commitments (Loans, EMIs, Rent)
 **Goal**: Enable users to register bank accounts/wallets and track recurring debt, loan EMIs, and monthly fixed dependencies.
 
-- [ ] Define Drizzle schema for `accounts` (bank, cash, card) with RLS.
-- [ ] Define Drizzle schema for `commitments` (EMIs, rent, utilities, subscriptions).
-- [ ] Build Accounts management UI (Create, Edit, View balances).
-- [ ] Build Commitments / Loans dashboard widget (Monthly fixed burden, upcoming due dates, active status toggle).
-- [ ] Write unit functions for calculating Total Monthly Committed Burn.
+- [x] Define Drizzle schema for `accounts` (bank, cash, card) with RLS.
+- [x] Define Drizzle schema for `commitments` (EMIs, rent, utilities, subscriptions).
+- [x] Build Accounts management UI (Create, Edit, View balances).
+- [x] Build Commitments / Loans dashboard widget (Monthly fixed burden, upcoming due dates, active status toggle).
+- [x] Write unit functions for calculating Total Monthly Committed Burn.
 
 ---
 
