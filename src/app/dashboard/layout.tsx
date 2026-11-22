@@ -4,7 +4,8 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { signOutUser } from "@/app/auth/actions";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { LogOut, LayoutDashboard, Layers, CreditCard, Sparkles } from "lucide-react";
+import { MobileBottomNav } from "@/components/mobile-bottom-nav";
+import { LogOut, Sparkles } from "lucide-react";
 
 export default function DashboardLayout({
   children,
@@ -13,7 +14,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="min-h-screen flex flex-col bg-zinc-950 text-zinc-100 selection:bg-amber-500 selection:text-zinc-950">
-      {/* Dashboard Header */}
+      {/* Dashboard Top Header */}
       <header className="border-b border-zinc-800/80 bg-zinc-950/60 backdrop-blur sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -50,8 +51,8 @@ export default function DashboardLayout({
           </div>
         </div>
 
-        {/* Sub-Navigation Bar */}
-        <div className="border-t border-zinc-800/60 bg-zinc-950/40">
+        {/* Desktop Sub-Navigation Bar */}
+        <div className="hidden sm:block border-t border-zinc-800/60 bg-zinc-950/40">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center gap-6 h-11 text-xs font-medium">
             <Link
               href="/dashboard"
@@ -94,10 +95,13 @@ export default function DashboardLayout({
         </div>
       </header>
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
+      {/* Main Content Area: padded for mobile bottom dock */}
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-24 sm:pb-8">
         {children}
       </main>
+
+      {/* Mobile Bottom Navigation Dock */}
+      <MobileBottomNav />
     </div>
   );
 }

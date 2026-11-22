@@ -84,10 +84,10 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 7: Mobile Optimization & PWA Readiness
 **Goal**: Ensure a native-app-like experience on iOS and Android browsers for instant daily logging on the go.
 
-- [ ] Optimize mobile bottom navigation bar and touch targets.
-- [ ] Add Web App Manifest and PWA service worker icons.
-- [ ] Configure iOS home screen bookmarking styling (safe area padding, touch callouts).
-- [ ] Test and polish responsive layout across phone, tablet, and desktop viewports.
+- [x] Optimize mobile bottom navigation bar and touch targets.
+- [x] Add Web App Manifest and PWA service worker icons.
+- [x] Configure iOS home screen bookmarking styling (safe area padding, touch callouts).
+- [x] Test and polish responsive layout across phone, tablet, and desktop viewports.
 
 ---
 

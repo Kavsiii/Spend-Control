@@ -6,12 +6,19 @@ export const metadata: Metadata = {
   title: "Spend Control: Proactive Financial Intelligence",
   description:
     "Evaluate purchase affordability, track daily expenditure, and manage recurring commitments.",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Spend Control",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
   themeColor: "#09090b",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
