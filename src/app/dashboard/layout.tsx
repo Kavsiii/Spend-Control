@@ -71,6 +71,12 @@ export default function DashboardLayout({
             >
               Fixed Commitments
             </Link>
+            <Link
+              href="/dashboard/transactions"
+              className="text-zinc-300 hover:text-amber-400 transition-colors py-2"
+            >
+              Daily Expenses
+            </Link>
           </div>
         </div>
       </header>

@@ -197,7 +197,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Quick Access Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Link href="/dashboard/accounts">
           <Card className="border-zinc-800 bg-zinc-900/30 hover:border-zinc-700 transition-colors cursor-pointer p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -205,8 +205,8 @@ export default function DashboardPage() {
                 <Building2 className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-zinc-200">Bank Accounts & Wallets</h3>
-                <p className="text-xs text-zinc-400">Register new liquid sources or credit limits</p>
+                <h3 className="font-semibold text-sm text-zinc-200">Accounts</h3>
+                <p className="text-xs text-zinc-400">Bank accounts and liquid cash</p>
               </div>
             </div>
             <ArrowRight className="h-4 w-4 text-zinc-400" />
@@ -220,8 +220,23 @@ export default function DashboardPage() {
                 <Car className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm text-zinc-200">Loans, Rent & EMIs</h3>
-                <p className="text-xs text-zinc-400">Track recurring debt obligations and upcoming due dates</p>
+                <h3 className="font-semibold text-sm text-zinc-200">Commitments</h3>
+                <p className="text-xs text-zinc-400">Recurring debt, EMIs, and rent</p>
+              </div>
+            </div>
+            <ArrowRight className="h-4 w-4 text-zinc-400" />
+          </Card>
+        </Link>
+
+        <Link href="/dashboard/transactions">
+          <Card className="border-zinc-800 bg-zinc-900/30 hover:border-zinc-700 transition-colors cursor-pointer p-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                <Wallet className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-sm text-zinc-200">Daily Expenses</h3>
+                <p className="text-xs text-zinc-400">Quick logging and category tracking</p>
               </div>
             </div>
             <ArrowRight className="h-4 w-4 text-zinc-400" />

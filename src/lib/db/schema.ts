@@ -55,6 +55,26 @@ export const commitments = pgTable("commitments", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+export const transactions = pgTable("transactions", {
+  id: uuid("id").primaryKey().defaultRandom().notNull(),
+  userId: uuid("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  accountId: uuid("account_id").references(() => accounts.id, {
+    onDelete: "set null",
+  }),
+  amount: numeric("amount", { precision: 12, scale: 2 }).notNull(),
+  currency: varchar("currency", { length: 3 }).default("USD").notNull(),
+  baseAmount: numeric("base_amount", { precision: 12, scale: 2 }).notNull(),
+  type: varchar("type", { length: 20 }).default("expense").notNull(), // "expense" | "income"
+  category: varchar("category", { length: 50 }).notNull(), // "food" | "transport" | "shopping" | "entertainment" | "health" | "utilities" | "other"
+  transactionDate: date("transaction_date").notNull(),
+  description: varchar("description", { length: 255 }).notNull(),
+  rawSource: varchar("raw_source", { length: 50 }).default("manual").notNull(), // "manual" | "statement" | "ai_parsed"
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 
@@ -63,3 +83,6 @@ export type NewAccount = typeof accounts.$inferInsert;
 
 export type Commitment = typeof commitments.$inferSelect;
 export type NewCommitment = typeof commitments.$inferInsert;
+
+export type Transaction = typeof transactions.$inferSelect;
+export type NewTransaction = typeof transactions.$inferInsert;

@@ -40,11 +40,11 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 3: Daily Expense Ingestion (Manual Quick Entry)
 **Goal**: Deliver a frictionless daily expenditure logging interface with multi-currency and categorization support.
 
-- [ ] Define Drizzle schema for `transactions` with multi-currency fields (`amount`, `currency`, `base_amount`).
-- [ ] Build quick-entry transaction modal and mobile-first floating action button (FAB).
-- [ ] Implement category selection (Food, Transport, Utilities, Shopping, Entertainment, etc.).
-- [ ] Build paginated/searchable transaction history list with date and category filters.
-- [ ] Implement instant edit/delete with optimistic UI updates.
+- [x] Define Drizzle schema for `transactions` with multi-currency fields (`amount`, `currency`, `base_amount`).
+- [x] Build quick-entry transaction modal and mobile-first floating action button (FAB).
+- [x] Implement category selection (Food, Transport, Utilities, Shopping, Entertainment, etc.).
+- [x] Build paginated/searchable transaction history list with date and category filters.
+- [x] Implement instant edit/delete with optimistic UI updates.
 
 ---
 
