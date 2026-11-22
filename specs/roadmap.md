@@ -18,11 +18,11 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 1: Multi-Tenant Database & Authentication Foundation
 **Goal**: Implement Supabase Auth, database connection via Drizzle ORM, and enforce Row-Level Security (RLS).
 
-- [ ] Setup Supabase project client configuration and Auth helpers.
-- [ ] Configure Drizzle ORM and Drizzle Kit migration pipeline.
-- [ ] Create `users` profile table tied to `auth.users` with default currency preference.
-- [ ] Implement Row-Level Security (RLS) policies guaranteeing tenant isolation.
-- [ ] Build Authentication UI (Sign Up, Sign In, Magic Link, Logout) with protected route middleware.
+- [x] Setup Supabase project client configuration and Auth helpers.
+- [x] Configure Drizzle ORM and Drizzle Kit migration pipeline.
+- [x] Create `users` profile table tied to `auth.users` with default currency preference.
+- [x] Implement Row-Level Security (RLS) policies guaranteeing tenant isolation.
+- [x] Build Authentication UI (Sign Up, Sign In, Magic Link, Logout) with protected route middleware.
 
 ---
 

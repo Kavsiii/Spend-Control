@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
@@ -79,7 +80,18 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <Badge variant="gold">Phase 0: Scaffolded</Badge>
+            <Link
+              href="/login"
+              className="text-xs font-medium text-zinc-300 hover:text-amber-400 transition-colors px-2 py-1"
+            >
+              Sign In
+            </Link>
+            <Link
+              href="/dashboard"
+              className="text-xs font-semibold bg-amber-500 text-zinc-950 px-3 py-1.5 rounded-md hover:bg-amber-400 transition-colors"
+            >
+              Dashboard
+            </Link>
             <ThemeToggle />
           </div>
         </div>
