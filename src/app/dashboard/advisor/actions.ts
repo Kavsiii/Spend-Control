@@ -7,6 +7,7 @@ import {
   evaluatePurchaseAffordability,
   type PurchaseEvaluationResult,
 } from "@/lib/ai/advisor";
+import { checkRateLimit } from "@/lib/security/rate-limit";
 
 const evalActionSchema = z.object({
   itemTitle: z.string().min(2, "Item name must have at least 2 characters."),
@@ -26,6 +27,15 @@ export async function evaluatePurchaseAction(
   prevState: AdvisorActionResult | null,
   formData: FormData
 ): Promise<AdvisorActionResult> {
+  // Rate limit protection: 10 evaluations per minute
+  const rateLimitResult = checkRateLimit("advisor", "active_advisor_user");
+  if (!rateLimitResult.success) {
+    return {
+      success: false,
+      error: rateLimitResult.error || "Rate limit exceeded. Please wait a moment.",
+    };
+  }
+
   const raw = {
     itemTitle: formData.get("itemTitle"),
     itemPrice: formData.get("itemPrice"),

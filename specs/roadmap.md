@@ -94,8 +94,8 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 8: Public Beta Hardening & Multi-User Launch
 **Goal**: Prepare the platform for public sign-ups with onboarding, rate limiting, and performance audits.
 
-- [ ] Implement user onboarding flow (Currency selection, first account setup, first recurring commitment).
-- [ ] Add rate limiting on AI statement parsing and advisor endpoints.
-- [ ] Conduct end-to-end security review of Supabase RLS policies.
-- [ ] Run Lighthouse performance audit and optimize bundle sizes.
-- [ ] Deploy production build on Vercel connected to production Supabase database.
+- [x] Implement user onboarding flow (Currency selection, first account setup, first recurring commitment).
+- [x] Add rate limiting on AI statement parsing and advisor endpoints.
+- [x] Conduct end-to-end security review of Supabase RLS policies.
+- [x] Run Lighthouse performance audit and optimize bundle sizes.
+- [x] Deploy production build on Vercel connected to production Supabase database.

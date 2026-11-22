@@ -21,7 +21,10 @@ import {
   BarChart3,
   PieChart as PieIcon,
   Activity,
+  Sparkles,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { OnboardingWizard, type OnboardingData } from "@/components/onboarding-wizard";
 import {
   calculateTotalLiquidBalance,
   calculateMonthlyCommittedBurn,
@@ -204,6 +207,8 @@ const demoTransactions: Transaction[] = [
 
 export default function DashboardPage() {
   const [timeHorizon, setTimeHorizon] = React.useState<7 | 30 | 90>(7);
+  const [showOnboarding, setShowOnboarding] = React.useState(false);
+  const [baseCurrency, setBaseCurrency] = React.useState("USD");
 
   const totalLiquidity = calculateTotalLiquidBalance(demoAccounts);
   const monthlyBurn = calculateMonthlyCommittedBurn(demoCommitments);
@@ -223,6 +228,15 @@ export default function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-8">
+      {/* Onboarding Wizard Modal */}
+      <OnboardingWizard
+        isOpen={showOnboarding}
+        onClose={() => setShowOnboarding(false)}
+        onComplete={(data: OnboardingData) => {
+          setBaseCurrency(data.baseCurrency);
+        }}
+      />
+
       {/* Welcome Hero */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
@@ -234,7 +248,17 @@ export default function DashboardPage() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <Badge variant="gold">Base Currency: USD</Badge>
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => setShowOnboarding(true)}
+            className="text-xs gap-1.5 border-zinc-800 hover:border-amber-500/50"
+          >
+            <Sparkles className="h-3.5 w-3.5 text-amber-400" />
+            <span>Setup Guide</span>
+          </Button>
+          <Badge variant="gold">Base Currency: {baseCurrency}</Badge>
           <Badge variant="secondary">RLS: Active</Badge>
         </div>
       </div>
