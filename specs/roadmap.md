@@ -51,11 +51,11 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 4: Visual Dashboard & Financial Analytics
 **Goal**: Build comprehensive, interactive visualizations showcasing spending velocity, category breakdown, and cash-flow health.
 
-- [ ] Implement Key Financial KPI cards (Total Balance, This Month's Spend, Upcoming Commitments, Discretionary Buffer).
-- [ ] Build Daily Spend Velocity & Burn Rate Chart (Recharts Area/Line chart).
-- [ ] Build Expense Breakdown by Category (Donut/Pie chart).
-- [ ] Build Monthly Cash Flow Comparison (Income vs. Fixed Commitments vs. Discretionary Spend).
-- [ ] Add date-range filtering (Last 7 days, Current Month, Last 90 days).
+- [x] Implement Key Financial KPI cards (Total Balance, This Month's Spend, Upcoming Commitments, Discretionary Buffer).
+- [x] Build Daily Spend Velocity & Burn Rate Chart (Recharts Area/Line chart).
+- [x] Build Expense Breakdown by Category (Donut/Pie chart).
+- [x] Build Monthly Cash Flow Comparison (Income vs. Fixed Commitments vs. Discretionary Spend).
+- [x] Add date-range filtering (Last 7 days, Current Month, Last 90 days).
 
 ---
 
