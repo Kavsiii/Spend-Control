@@ -77,6 +77,12 @@ export default function DashboardLayout({
             >
               Daily Expenses
             </Link>
+            <Link
+              href="/dashboard/import"
+              className="text-zinc-300 hover:text-amber-400 transition-colors py-2"
+            >
+              Import Statement
+            </Link>
           </div>
         </div>
       </header>

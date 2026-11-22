@@ -75,6 +75,20 @@ export const transactions = pgTable("transactions", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+export const statementUploads = pgTable("statement_uploads", {
+  id: uuid("id").primaryKey().defaultRandom().notNull(),
+  userId: uuid("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  fileName: varchar("file_name", { length: 255 }).notNull(),
+  fileUrl: varchar("file_url", { length: 512 }),
+  fileType: varchar("file_type", { length: 50 }).notNull(), // "csv" | "pdf" | "txt"
+  status: varchar("status", { length: 50 }).default("pending").notNull(), // "pending" | "processing" | "completed" | "failed"
+  extractedCount: numeric("extracted_count").default("0").notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 
@@ -86,3 +100,6 @@ export type NewCommitment = typeof commitments.$inferInsert;
 
 export type Transaction = typeof transactions.$inferSelect;
 export type NewTransaction = typeof transactions.$inferInsert;
+
+export type StatementUpload = typeof statementUploads.$inferSelect;
+export type NewStatementUpload = typeof statementUploads.$inferInsert;

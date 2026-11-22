@@ -62,11 +62,11 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 5: Automated Ingestion & Statement Parser
 **Goal**: Allow users to drag-and-drop bank statements (PDF/CSV) and leverage AI to extract, categorize, and batch-import transactions.
 
-- [ ] Create Supabase Storage bucket for user statement documents.
-- [ ] Build drag-and-drop file upload UI with progress indicators.
-- [ ] Implement statement text extraction pipeline (`pdf-parse`, `papaparse`).
-- [ ] Integrate Gemini 2.0 Flash via Vercel AI SDK to extract structured transactions into a typed Zod schema.
-- [ ] Build Transaction Review & Reconciliation UI (Users inspect parsed rows, confirm or tweak before batch inserting).
+- [x] Create Supabase Storage bucket for user statement documents.
+- [x] Build drag-and-drop file upload UI with progress indicators.
+- [x] Implement statement text extraction pipeline (`pdf-parse`, `papaparse`).
+- [x] Integrate Gemini 2.0 Flash via Vercel AI SDK to extract structured transactions into a typed Zod schema.
+- [x] Build Transaction Review & Reconciliation UI (Users inspect parsed rows, confirm or tweak before batch inserting).
 
 ---
 
