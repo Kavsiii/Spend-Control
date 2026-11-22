@@ -73,11 +73,11 @@ This roadmap breaks down the build into small, verifiable, sequential phases. Ea
 ## Phase 6: AI Financial Advisor ("Can I / When Can I Buy This?")
 **Goal**: Empower users with an intelligent financial advisor that evaluates wishlist purchases against actual financial health and upcoming commitments.
 
-- [ ] Define Drizzle schema for `wishlist_items` (title, target amount, currency, target date, evaluation payload).
-- [ ] Build deterministic financial snapshot calculator (Current Liquid Assets - Upcoming 60-day Commitments - Projected Daily Burn).
-- [ ] Build "Evaluate Purchase" modal (User enters: item name, price, desired timeline).
-- [ ] Implement AI Advisor reasoning engine with Gemini 2.0 (Produces concrete verdict: BUY NOW, DEFER, or TARGET DATE, plus tailored savings pace).
-- [ ] Build Advisor results card displaying mathematical surplus/deficit, projected safety runway, and recommendations.
+- [x] Define Drizzle schema for `wishlist_items` (title, target amount, currency, target date, evaluation payload).
+- [x] Build deterministic financial snapshot calculator (Current Liquid Assets - Upcoming 60-day Commitments - Projected Daily Burn).
+- [x] Build "Evaluate Purchase" modal (User enters: item name, price, desired timeline).
+- [x] Implement AI Advisor reasoning engine with Gemini 2.0 (Produces concrete verdict: BUY NOW, DEFER, or TARGET DATE, plus tailored savings pace).
+- [x] Build Advisor results card displaying mathematical surplus/deficit, projected safety runway, and recommendations.
 
 ---
 

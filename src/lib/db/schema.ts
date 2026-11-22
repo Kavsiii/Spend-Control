@@ -89,6 +89,25 @@ export const statementUploads = pgTable("statement_uploads", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
+export const wishlistItems = pgTable("wishlist_items", {
+  id: uuid("id").primaryKey().defaultRandom().notNull(),
+  userId: uuid("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  title: varchar("title", { length: 255 }).notNull(),
+  targetAmount: numeric("target_amount", { precision: 12, scale: 2 }).notNull(),
+  currency: varchar("currency", { length: 3 }).default("USD").notNull(),
+  priority: varchar("priority", { length: 20 }).default("medium").notNull(), // "low" | "medium" | "high"
+  targetDate: date("target_date"),
+  status: varchar("status", { length: 30 }).default("evaluating").notNull(), // "evaluating" | "approved" | "purchased" | "deferred"
+  verdict: varchar("verdict", { length: 30 }), // "BUY_NOW" | "DEFER" | "TARGET_DATE"
+  surplusDeficit: numeric("surplus_deficit", { precision: 12, scale: 2 }),
+  safePurchaseDate: date("safe_purchase_date"),
+  adviceRationale: text("advice_rationale"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
 export type User = typeof users.$inferSelect;
 export type NewUser = typeof users.$inferInsert;
 
@@ -103,3 +122,6 @@ export type NewTransaction = typeof transactions.$inferInsert;
 
 export type StatementUpload = typeof statementUploads.$inferSelect;
 export type NewStatementUpload = typeof statementUploads.$inferInsert;
+
+export type WishlistItem = typeof wishlistItems.$inferSelect;
+export type NewWishlistItem = typeof wishlistItems.$inferInsert;

@@ -83,6 +83,13 @@ export default function DashboardLayout({
             >
               Import Statement
             </Link>
+            <Link
+              href="/dashboard/advisor"
+              className="text-zinc-300 hover:text-amber-400 transition-colors py-2 flex items-center gap-1"
+            >
+              <Sparkles className="h-3 w-3 text-amber-400" />
+              <span>AI Advisor</span>
+            </Link>
           </div>
         </div>
       </header>
