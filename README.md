@@ -1,3 +1,5 @@
+⚠️ Work In Progress!
+---
 # Spend Control
 
 Spend Control is a proactive financial intelligence application designed to give users clear visibility and conscious command over their daily finances. 
